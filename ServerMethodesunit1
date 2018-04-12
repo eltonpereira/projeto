@@ -1,0 +1,55 @@
+unit ServerMethodsUnit1;
+
+interface
+
+uses data.dbxodbc,system.Odbc, System.SysUtils, System.Classes, System.Json,
+    DataSnap.DSProviderDataModuleAdapter,
+    Datasnap.DSServer, Datasnap.DSAuth, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.MSAcc,
+  FireDAC.Phys.MSAccDef, FireDAC.VCLUI.Wait, FireDAC.Comp.UI,
+  FireDAC.Phys.ODBCBase, Data.DB, FireDAC.Comp.Client, FireDAC.Stan.Param,
+  FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, Datasnap.Provider,
+  FireDAC.Comp.DataSet, FireDAC.FMXUI.Wait, Data.DBXDataSnap, Data.DBXCommon,
+  IPPeerClient, Data.SqlExpr;
+
+type
+  TServerMethods1 = class(TDSServerModule)
+    fd_vendas: TFDConnection;
+    FD_Midas: TFDConnection;
+    FD_Fornecedor: TFDConnection;
+    FD_financeiro: TFDConnection;
+    FD_estoque: TFDConnection;
+    FD_compras: TFDConnection;
+    FD_Cliente: TFDConnection;
+    FDGUIxWaitCursor1: TFDGUIxWaitCursor;
+    fdqyQuery_vendas: TFDQuery;
+    Query_midas: TFDQuery;
+    Query_fornecedor: TFDQuery;
+    Query_financeiro: TFDQuery;
+    Query_estoque: TFDQuery;
+    Query_compras: TFDQuery;
+    Query_cliente: TFDQuery;
+    DataSet_vendas: TDataSetProvider;
+    DataSet_midas: TDataSetProvider;
+    DataSet_fornecedor: TDataSetProvider;
+    DataSet_financeiro: TDataSetProvider;
+    DataSet_estoque: TDataSetProvider;
+    DataSet_compras: TDataSetProvider;
+    DataSet_cliente: TDataSetProvider;
+    FDPhysMSAccessDriverLink1: TFDPhysMSAccessDriverLink;
+  private
+    { Private declarations }
+  public
+    servermethods: TServerMethods1;{ Public declarations }
+  end;
+
+
+
+implementation
+
+
+{$R *.dfm}
+
+
+end.
